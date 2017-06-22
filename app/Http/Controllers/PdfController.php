@@ -13,7 +13,7 @@ class PdfController extends Controller
 	public function generatePdf()
 	{
 		$pdf = app()->make('dompdf.wrapper');
-		$pdf->loadHTML('<h1>Test</h1>');
+		$pdf->loadFile(base_path().'/public/myfile.html');
 		return $pdf->stream();
 	}
 
